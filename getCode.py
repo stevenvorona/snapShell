@@ -17,6 +17,10 @@ username  = sys.argv[1]
 color  = sys.argv[2][1:]
 backgroundHex  = sys.argv[3][1:]
 
+with open(os.devnull, 'wb') as devnull:
+    subprocess.check_call(['rm', '-f', username + 'base.png'], stdout=devnull, stderr=subprocess.STDOUT)
+    subprocess.check_call(['rm', '-f', username + 'Original.svg'], stdout=devnull, stderr=subprocess.STDOUT)
+    subprocess.check_call(['rm', '-f', username + 'Colored.svg'], stdout=devnull, stderr=subprocess.STDOUT)
 
 requrl = url.format(username, filetype)
 path = str(username) + "Original." + filetype.lower()
@@ -34,7 +38,8 @@ with open(os.devnull, 'wb') as devnull:
         fout.write(line.replace('fill=\"#FFFC00\"', 'fill=\"#' + color + '\"'))
     fin.close()
     fout.close()
-
+    subprocess.check_call(['rm', '-f', username + 'Original.svg'], stdout=devnull, stderr=subprocess.STDOUT)
+    subprocess.check_call(['rm', '-f', username + 'base.png'], stdout=devnull, stderr=subprocess.STDOUT)
 #    newSvg.write(svgContents)
 
 
@@ -47,9 +52,10 @@ with open(os.devnull, 'wb') as devnull:
     background.save('static/img/' + username + '.png',"PNG")
 
     #comment following lines to get preserve certain elements
-    subprocess.check_call(['rm', '-f', username + 'base.png'], stdout=devnull, stderr=subprocess.STDOUT)
     subprocess.check_call(['rm', '-f', username + 'Original.svg'], stdout=devnull, stderr=subprocess.STDOUT)
     subprocess.check_call(['rm', '-f', username + 'Colored.svg'], stdout=devnull, stderr=subprocess.STDOUT)
+    subprocess.check_call(['rm', '-f', username + 'base.png'], stdout=devnull, stderr=subprocess.STDOUT)
+
 
 
 #os.system('rm '+ username + 'base.png')

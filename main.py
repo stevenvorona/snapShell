@@ -29,7 +29,7 @@ def home():
         username = form.username.data
         with open(os.devnull, 'wb') as devnull:
             subprocess.check_call(['python', 'getCode.py', username, bitmoji, background], stdout=devnull, stderr=subprocess.STDOUT)
-        return redirect('/success.html')
+        return redirect('')
     return render_template('index.html', form=form)
 if __name__ == "__main__":
     app.run(debug=True)
