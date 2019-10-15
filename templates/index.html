@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Flask Tutorial</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+
+<body>
+  <h1> Snapchat Case Art Generator </h1>
+  <form method="POST" action="/">
+    {{ form.csrf_token }}
+    <p> Username </p>
+    {{ form.username(size=20) }}
+    <p> Bitmoji </p>
+    <input type="color" name="bitmoji" value="#fff000">
+    <p> Background </p>
+    <input type="color" name="background" value="#fff000">
+    <p> Submit </p>
+    <input type="submit" value="Go">
+    <p> Image </p>
+    <img src="static/img/stevev192.png" width="200" height="400">
+
+  </form>
+</body>
+
+</html>
