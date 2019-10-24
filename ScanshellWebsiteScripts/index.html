@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+
+body, html {
+  height: 100%;
+  line-height: 1.8;
+}
+
+.responsive {
+  width: 100%;
+  height: auto;
+}
+
+.w3-bar .w3-button {
+  padding: 16px;
+}
+
+/* The container */
+.container {
+  display: inline;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  margin-right: 75px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Create a custom radio button */
+.checkmark {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  top: 0;
+  left: 0;
+  height: 45px;
+  width: 45px;
+  background-color: #000000;
+  border-radius: 50%;
+  outline: none;
+  border: 1px solid black;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the radio button is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: #2196F3;
+  border: 2px solid #ADD8E6;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;;
+  display: none;
+  
+}
+
+/* Show the indicator (dot/circle) when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.container .checkmark:after {
+ 	top: 9px;
+	left: 9px;
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+  background: 2196F3;
+}
+
+</style>
+
+<body>
+
+<div class="w3-row-padding" style="margin-top:16px">
+    <!--IMAGE COLUMN-->
+    <div class="w3-col w3-mobile" style="width:38%; display: flex; align-items: center; justify-content: center;">
+        <div>
+        <img id="caseImage" style="position: relative; top: 0; left: 0; width:auto; height:400px;" src="cases/ffffff.png" alt="iPhone Snapchat Case" class="responsive">
+        </div>
+        <div style="position: absolute; top: 200; left: 50;">
+            <svg id="main" xmlns="http://www.w3.org/2000/svg" height="200" version="1.1" viewBox="0 0 400 400" width="400" xmlns:xlink="http://www.w3.org/1999/xlink">
+              <defs>
+                <rect height="300" id="rect" rx="51.2" width="300" x="10" y="10"/>
+                <clipPath id="clip">
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rect"/>
+                </clipPath>
+              </defs>
+              <use id="circle" fill="#FFFC00" stroke="black" stroke-width="0" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rect"/>
+              <image id="bitmoji" clip-path="url(#clip)" height="62.0%" width="62.0%" x="75" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="" y="75"/>
+              <path id="dots" d="" fill="#000000"/>
+              <path id="background" d="" fill="#FFFC00"/>
+            </svg>
+        </div>
+    </div>
+    <!--FORM COLUMN-->
+    <div class="w3-col w3-mobile" style="width: 62%; display: flex; align-items: center; justify-content: center;">
+        <form action="/action_page.php" target="_blank">
+            <!--SNAPCHAT USERNAME-->
+            <div style="padding-bottom: 0; padding-top: 10px;">
+                <input id="username" oninput="" class="w3-input w3-border" style="text-align: center; font-size: 20px;" type="text" placeholder="Snapchat Username" required name="Username">
+            </div>
+             <!--COLOR SCHEME SELECTOR-->
+             <b><p id="testPara" style="text-align: center; font-size:19px; padding-bottom: 0px; padding-top: 10px; margin: 0;">Please choose a color scheme</p></b>
+             <div class="w3-center" style="margin-left: 5%; padding-top: 0; margin-top: 0;">
+              <label class="container">
+                  <input class="w3-radio" type="radio" checked="checked" name="radio" onclick="changeBackgroundColor(''); reloadCaseImage('');">
+                  <span class="checkmark"></span>
+              </label>
+              <label class="container">
+                <input class="w3-radio" type="radio" name="radio" onclick="changeBackgroundColor(''); reloadCaseImage('');">
+                <span class="checkmark"></span>
+              </label>
+              <label class="container">
+                <input class="w3-radio" type="radio" name="radio" onclick="changeBackgroundColor(''); reloadCaseImage('');">
+                <span class="checkmark"></span>
+              </label>
+              <label class="container">
+                <input class="w3-radio" type="radio" name="radio" onclick="changeBackgroundColor(''); reloadCaseImage('');">
+                <span class="checkmark"></span>
+              </label>
+              </div>
+             <div class="w3-center" style="margin-left: 5%; padding-top: 20px; margin-top: 0;">
+              <label class="container">
+                <input class="w3-radio" type="radio" name="radio" onclick="changeBackgroundColor(''); reloadCaseImage('');">
+                <span class="checkmark"></span>
+              </label>
+                <label class="container">
+                  <input class="w3-radio" type="radio" name="radio" onclick="changeBackgroundColor(''); reloadCaseImage('');">
+                  <span class="checkmark"></span>
+                </label>
+                <label class="container">
+                  <input class="w3-radio" type="radio" name="radio" onclick="changeBackgroundColor(''); reloadCaseImage('');">
+                  <span class="checkmark"></span>
+                </label>
+                <label class="container">
+                  <input class="w3-radio" type="radio" name="radio" onclick="changeBackgroundColor(''); reloadCaseImage('');">
+                  <span class="checkmark"></span>
+                </label>
+             </div>
+             <div class="w3-center" style="margin-left: 5%; padding-top: 20px; margin-top: 0;">
+              <label class="container">
+                  <input class="w3-radio" type="radio" name="radio" onclick="changeBackgroundColor(''); reloadCaseImage('');">
+                  <span class="checkmark"></span>
+              </label>
+              <label class="container">
+                <input class="w3-radio" type="radio" name="radio" onclick="changeBackgroundColor(''); reloadCaseImage('');">
+                <span class="checkmark"></span>
+              </label>
+              <label class="container">
+                <input class="w3-radio" type="radio" name="radio" onclick="changeBackgroundColor(''); reloadCaseImage('');">
+                <span class="checkmark"></span>
+              </label>
+              <label class="container">
+                <input class="w3-radio" type="radio" name="radio" onclick="changeBackgroundColor(''); reloadCaseImage('');">
+                <span class="checkmark"></span>
+              </label>
+              </div>
+              <div class="w3-center" style="margin-left: 5%; padding-top: 20px; margin-top: 0;">
+                <label class="container">
+                    <input class="w3-radio" type="radio" name="radio" onclick="changeBackgroundColor(''); reloadCaseImage('');">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="container">
+                  <input class="w3-radio" type="radio" name="radio" onclick="changeBackgroundColor(''); reloadCaseImage('');">
+                  <span class="checkmark"></span>
+                </label>
+                <label class="container">
+                  <input class="w3-radio" type="radio" name="radio" onclick="changeBackgroundColor(''); reloadCaseImage('');">
+                  <span class="checkmark"></span>
+                </label>
+                <label class="container">
+                  <input class="w3-radio" type="radio" name="radio" onclick="changeBackgroundColor(''); reloadCaseImage('');">
+                  <span class="checkmark"></span>
+                </label>
+                </div>
+                <div class="w3-center" style="margin-left: 5%; padding-top: 20px; margin-top: 0;">
+                  <label class="container">
+                    <input class="w3-radio" type="radio" name="radio" onclick="changeBackgroundColor(''); reloadCaseImage('');">
+                    <span class="checkmark"></span>
+                  </label>
+                    <label class="container">
+                      <input class="w3-radio" type="radio" name="radio" onclick="changeBackgroundColor(''); reloadCaseImage('');">
+                      <span class="checkmark"></span>
+                    </label>
+                    <label class="container">
+                      <input class="w3-radio" type="radio" name="radio" onclick="changeBackgroundColor(''); reloadCaseImage('');">
+                      <span class="checkmark"></span>
+                    </label>
+                    <label class="container">
+                      <input class="w3-radio" type="radio" name="radio" onclick="changeBackgroundColor(''); reloadCaseImage('');">
+                      <span class="checkmark"></span>
+                    </label>
+                 </div>
+                 <div class="w3-center" style="margin-left: 5%; padding-top: 20px; margin-top: 0;">
+                  <label class="container">
+                    <input class="w3-radio" type="radio" name="radio" onclick="changeBackgroundColor(''); reloadCaseImage('');">
+                    <span class="checkmark"></span>
+                  </label>
+                    <label class="container">
+                      <input class="w3-radio" type="radio" name="radio" onclick="changeBackgroundColor(''); reloadCaseImage('');">
+                      <span class="checkmark"></span>
+                    </label>
+                    <label class="container">
+                      <input class="w3-radio" type="radio" name="radio" onclick="changeBackgroundColor(''); reloadCaseImage('');">
+                      <span class="checkmark"></span>
+                    </label>
+                    <label class="container">
+                      <input class="w3-radio" type="radio" name="radio" onclick="changeBackgroundColor(''); reloadCaseImage('');">
+                      <span class="checkmark"></span>
+                    </label>
+                 </div>
+        </div>
+        <div style="margin-bottom: 500px;"></div>
+        <!-- <p>
+            <button class="w3-button w3-black" type="submit">
+            <i class="fa fa-paper-plane"></i> SEND MESSAGE
+            </button>
+        </p> -->
+          </form>
+</div>
+
+<script>
+
+let colors = ["ffffff","000000","6495ed","ffef00","8fa5b0","ffc281","f35d8b","191970","162545","98ff98","B00D23","30443d","ffe8dc"];
+
+fillColors();
+changeBitmojiAndDots("emmettmiller");
+changeBackgroundColor("#ffffff");
+
+function fillColors(){
+  for(var i = 0; i < (colors.length*2)-2; i++){
+    if(i<colors.length){
+      //SOLID COLORS
+      color = colors[i];
+      document.getElementsByClassName("w3-radio")[i].setAttribute("onclick", "changeBackgroundColor('#" + color + "'); reloadCaseImage('" + color + "');");
+      document.getElementsByClassName("checkmark")[i].setAttribute("style", "background: linear-gradient(-45deg, #" + color + " 50%, #" + color + " 50%);");
+    }else{
+      //MIXED COLORS
+      color = colors[(i%12)+1];
+      console.log(document.getElementsByClassName("w3-radio")[i]);
+      document.getElementsByClassName("w3-radio")[i].setAttribute("onclick", "changeBackgroundColor('#" + color + "'); reloadCaseImage('ffffff');");
+      document.getElementsByClassName("checkmark")[i].setAttribute("style", "background: linear-gradient(-45deg, #ffffff 50%, #" + color + " 50%);");
+    }
+  }
+}
+
+function afterSet(){
+  document.getElementById("main").setAttribute("height", "100");
+  document.getElementById("main").setAttribute("width", "100");
+}
+
+function changeBitmojiAndDots(username){
+  var newDots = "";
+  var newBitmoji = "";
+  var newBackground = "";
+  var newSvgNumOne = "";
+  var newSvgNumTwo = "";
+
+  const Http = new XMLHttpRequest();
+  const url='http://127.0.0.1:5000/?username=' + username;
+  Http.open("GET", url);
+  Http.send();
+  Http.onreadystatechange = (e) => {
+    var text = Http.response;
+    if(text.length != 0 && text.length != 290){
+      //NO ERROR
+      var obj = JSON.parse(text);
+      status = obj.status;
+      console.log(status);
+      newDots = obj.dotsData;
+      newBitmoji = obj.bitmojiData;
+      newBackground = obj.backgroundData;
+      newSvgNumOne = obj.svgNumOne;
+      newSvgNumTwo = obj.svgNumTwo;
+      //SET DOTS
+      document.getElementById("dots").setAttribute("d", newDots);
+      //SET BITMOJI
+      document.getElementById("bitmoji").setAttribute("xlink:href", newBitmoji);
+      //SET BACKGROUND
+      document.getElementById("background").setAttribute("d", newBackground);
+      //SET A BUNCH OF OTHER SHIT
+      console.log(newSvgNumOne);
+      console.log(newSvgNumTwo);
+      document.getElementById("main").setAttribute("height", newSvgNumOne);
+      document.getElementById("main").setAttribute("width", newSvgNumOne);
+      document.getElementById("main").setAttribute("viewBox", "0 0 " + newSvgNumOne + " " + newSvgNumOne);
+      document.getElementById("rect").setAttribute("height", parseInt(newSvgNumOne)-40);
+      document.getElementById("rect").setAttribute("width", parseInt(newSvgNumOne) -40);
+      document.getElementsByTagName("image")[0].setAttribute("x", newSvgNumTwo)
+      document.getElementsByTagName("image")[0].setAttribute("y", newSvgNumTwo)
+      afterSet();
+    }else if(text.length == 290){
+      console.log("ERROR");
+      document.getElementById("dots").setAttribute("d", "M202.78,70.62c10.56,0,21.26,2.3,30.89,6.62c15.95,7.15,28.98,20.65,35.43,36.95c3.69,9.33,3.8,20.08,3.71,29.97c-0.05,5.71-0.32,11.41-0.65,17.1c-0.17,2.86-0.35,5.72-0.53,8.59c-0.1,1.57-0.2,3.14-0.29,4.71c-0.06,1.01-0.41,2.38-0.19,3.37c0.49,2.19,3.97,3.65,5.88,4.26c5.06,1.59,10.36,0.44,15.24-1.29c2.91-1.04,5.52-2.77,8.71-2.47c2.31,0.21,4.98,1.24,6.63,2.91c1.73,1.76,1.36,3.49-0.12,5.17c-2.82,3.2-7.48,5.02-11.41,6.32c-4.31,1.42-8.69,2.68-12.71,4.84c-3.96,2.13-7.62,5.19-9.18,9.54c-1.82,5.06-0.3,10.2,1.84,14.87c3.63,7.95,8.34,15.4,13.86,22.18c10.31,12.68,23.77,22.96,39.57,27.66c2.32,0.69,4.67,1.26,7.05,1.7c1.01,0.19,1.66-0.04,1.31,1.03c-0.05,0.14-0.14,0.27-0.21,0.39c-0.53,0.88-1.39,1.59-2.21,2.19c-4.65,3.4-10.79,4.97-16.29,6.32c-2.6,0.64-5.23,1.19-7.86,1.69c-2.62,0.49-5.81,0.51-8.25,1.57c-4.08,1.77-4.69,7.86-5.52,11.62c-0.32,1.47-0.66,2.94-1.05,4.39c-0.35,1.29-0.24,1.95-1.62,1.97c-2.36,0.04-4.73-0.59-7.04-1.01c-5.43-1-10.93-1.54-16.45-1.4c-6.03,0.15-12.19,0.84-17.8,3.17c-5.36,2.23-10.16,5.6-14.88,8.94c-8.25,5.83-16.64,11.6-26.67,13.82c-5.03,1.11-10.23,1.23-15.36,1.07c-5.47-0.17-10.85-1.31-15.93-3.35c-9.68-3.88-17.55-10.75-26.28-16.25c-4.96-3.12-10.23-5.6-16.06-6.52c-6.18-0.97-12.47-1.17-18.7-0.51c-2.42,0.26-4.82,0.64-7.21,1.09c-2.34,0.44-4.87,1.27-7.26,1.17c-1.13-0.05-1.14-0.39-1.44-1.45c-0.44-1.57-0.81-3.17-1.16-4.76c-0.54-2.44-0.99-4.94-1.87-7.29c-0.69-1.84-1.7-3.71-3.54-4.59c-2.35-1.13-5.57-1.11-8.13-1.59c-4.76-0.89-9.51-1.94-14.13-3.4c-3.97-1.25-8.75-2.78-11.74-5.88c-0.28-0.29-0.56-0.61-0.78-0.96c-0.07-0.11-0.17-0.24-0.21-0.37c-0.32-1,0.06-0.86,1.04-1.04c4.6-0.84,9.1-2.15,13.44-3.89c7.94-3.18,15.24-7.81,21.71-13.39c9.48-8.18,17.34-18.37,23.19-29.43c2-3.78,4.15-7.92,4.82-12.14c1.7-10.6-7.03-16.6-15.82-19.8c-4.67-1.7-9.49-2.86-13.85-5.34c-1.99-1.13-5.85-3.38-5.55-6.2c0.23-2.14,2.87-3.59,4.65-4.25c1.2-0.45,2.52-0.74,3.8-0.67c1.55,0.09,2.88,0.91,4.29,1.49c5.14,2.11,10.88,3.61,16.46,2.74c2.79-0.43,5.68-1.49,7.69-3.55c0.49-0.5,0.66-0.7,0.77-1.31c0.2-1.11-0.14-2.59-0.21-3.7c-0.18-2.96-0.37-5.92-0.55-8.88c-0.7-11.29-1.37-22.68-0.54-33.98c0.36-4.85,0.99-9.74,2.41-14.4c1.41-4.63,3.76-9.03,6.29-13.14c4.65-7.58,10.7-14.27,17.89-19.5c10.55-7.68,23.29-12.08,36.23-13.31C194.49,70.61,198.65,70.62,202.78,70.62M0,336C0,371.34,28.66,400,64,400L336,400C371.34,400,400,371.34,400,336L400,64C400,28.66,371.34,0,336,0L64,0C28.66,0,0,28.66,0,64L0,336");
+      document.getElementById("background").setAttribute("d", "M7.5,64C7.5,32.8,32.8,7.5,64,7.5L336,7.5C367.2,7.5,392.5,32.8,392.5,64L392.5,336C392.5,367.2,367.2,392.5,336,392.5L64,392.5C32.8,392.5,7.5,367.2,7.5,336L7.5,64M202.78,64.65c-9.56,0.04-18.84,0.63-28.1,3.25c-14.76,4.19-28.08,12.6-37.75,24.57c-5.99,7.41-11.21,16.24-13.45,25.57c-2.5,10.4-2.48,21.37-2.15,31.99c0.17,5.61,0.5,11.22,0.85,16.82c0.09,1.35,0.17,2.71,0.26,4.06c0.06,0.91,0.72,4.36,0.18,4.98c-1.13,1.29-4.74,1.2-6.2,1.14c-2.63-0.1-5.22-0.72-7.7-1.56c-2.71-0.92-5.27-2.56-8.15-2.84c-4.52-0.44-9.53,1.44-12.65,4.74c-5.3,5.61-1.94,12.24,3.53,16.04c4.42,3.07,9.48,4.68,14.54,6.34c4.18,1.38,8.79,2.96,11.98,6.13c4.66,4.62,2.05,10.72-0.41,15.77c-1.92,3.94-4.16,7.72-6.6,11.36c-8.32,12.38-19.41,23.25-33,29.66c-4.09,1.93-8.38,3.44-12.79,4.47c-2.16,0.51-4.8,0.54-6.66,1.85c-2.02,1.43-2.86,3.9-2.38,6.29c1.21,6.09,8.51,9.26,13.66,11.17c4.54,1.69,9.27,2.88,14.01,3.89c2.89,0.61,5.79,1.14,8.7,1.62c1.42,0.23,2.07,0.14,2.59,1.51c0.4,1.06,0.66,2.18,0.92,3.28c0.65,2.71,1.17,5.46,1.91,8.15c0.49,1.77,1.12,3.44,2.61,4.62c3.85,3.03,9.95,0.69,14.23-0.07c11.43-2.03,23.89-1.96,34.18,3.96c8.94,5.14,16.66,12.11,26.02,16.58c9.95,4.76,20.95,6.13,31.87,5.12c10.24-0.95,19.5-5.15,27.99-10.76c9.28-6.12,17.81-13.89,29.21-15.44c6.21-0.84,12.49-0.79,18.7,0.07c4.3,0.6,8.77,2.1,13.13,1.72c5.92-0.52,6.55-6.97,7.57-11.64c0.41-1.88,0.6-4.69,1.73-6.3c0.66-0.94,2.52-0.85,3.66-1.04c1.59-0.27,3.18-0.56,4.76-0.87c8.3-1.62,17.5-3.53,24.64-8.34c2.07-1.39,4.04-3.17,5.06-5.49c0.96-2.18,1-4.71-0.46-6.68c-1.52-2.07-3.74-2.3-6.07-2.77c-8.7-1.75-16.93-5.36-24.25-10.36c-11.22-7.65-20.32-18.29-27.1-30c-1.41-2.44-2.7-4.93-3.87-7.49c-1.81-3.95-3.45-8.63-0.63-12.54c2.6-3.6,7.29-5.41,11.33-6.83c4.96-1.74,9.98-3.1,14.55-5.81c3.33-1.97,6.83-4.76,7.79-8.72c2.51-10.39-12.34-15.64-20.06-12.33c-4.77,2.05-10.55,4.67-15.81,2.93c-0.34-0.11-0.94-0.22-1.19-0.48c-0.42-0.43-0.2-1.13-0.16-1.8c0.09-1.52,0.19-3.04,0.28-4.56c0.15-2.35,0.3-4.7,0.44-7.06c0.66-11.12,1.19-22.34,0.18-33.45c-0.45-4.94-1.2-9.89-2.72-14.63c-1.48-4.61-3.79-9.01-6.28-13.16c-4.63-7.72-10.58-14.64-17.66-20.21c-10.66-8.39-23.61-13.54-36.98-15.54C210.7,64.98,206.74,64.65,202.78,64.65M86.28,17.83A6.42,6.42,0,0,0,86.28,30.67A6.42,6.42,0,0,0,86.28,17.83M148.31,17.83A6.42,6.42,0,0,0,148.31,30.67A6.42,6.42,0,0,0,148.31,17.83M210.34,17.83A6.42,6.42,0,0,0,210.34,30.67A6.42,6.42,0,0,0,210.34,17.83M313.72,17.83A6.42,6.42,0,0,0,313.72,30.67A6.42,6.42,0,0,0,313.72,17.83M65.61,38.51A6.42,6.42,0,0,0,65.61,51.35A6.42,6.42,0,0,0,65.61,38.51M127.63,38.51A6.42,6.42,0,0,0,127.63,51.35A6.42,6.42,0,0,0,127.63,38.51M210.34,38.51A6.42,6.42,0,0,0,210.34,51.35A6.42,6.42,0,0,0,210.34,38.51M231.01,38.51A6.42,6.42,0,0,0,231.01,51.35A6.42,6.42,0,0,0,231.01,38.51M251.69,38.51A6.42,6.42,0,0,0,251.69,51.35A6.42,6.42,0,0,0,251.69,38.51M272.37,38.51A6.42,6.42,0,0,0,272.37,51.35A6.42,6.42,0,0,0,272.37,38.51M334.39,59.19A6.42,6.42,0,0,0,334.39,72.03A6.42,6.42,0,0,0,334.39,59.19M293.04,79.86A6.42,6.42,0,0,0,293.04,92.7A6.42,6.42,0,0,0,293.04,79.86M313.72,79.86A6.42,6.42,0,0,0,313.72,92.7A6.42,6.42,0,0,0,313.72,79.86M334.39,79.86A6.42,6.42,0,0,0,334.39,92.7A6.42,6.42,0,0,0,334.39,79.86M355.07,79.86A6.42,6.42,0,0,0,355.07,92.7A6.42,6.42,0,0,0,355.07,79.86M375.75,79.86A6.42,6.42,0,0,0,375.75,92.7A6.42,6.42,0,0,0,375.75,79.86M24.25,100.54A6.42,6.42,0,0,0,24.25,113.38A6.42,6.42,0,0,0,24.25,100.54M44.93,100.54A6.42,6.42,0,0,0,44.93,113.38A6.42,6.42,0,0,0,44.93,100.54M334.39,100.54A6.42,6.42,0,0,0,334.39,113.38A6.42,6.42,0,0,0,334.39,100.54M355.07,100.54A6.42,6.42,0,0,0,355.07,113.38A6.42,6.42,0,0,0,355.07,100.54M24.25,121.21A6.42,6.42,0,0,0,24.25,134.05A6.42,6.42,0,0,0,24.25,121.21M44.93,121.21A6.42,6.42,0,0,0,44.93,134.05A6.42,6.42,0,0,0,44.93,121.21M106.96,121.21A6.42,6.42,0,0,0,106.96,134.05A6.42,6.42,0,0,0,106.96,121.21M293.04,121.21A6.42,6.42,0,0,0,293.04,134.05A6.42,6.42,0,0,0,293.04,121.21M313.72,121.21A6.42,6.42,0,0,0,313.72,134.05A6.42,6.42,0,0,0,313.72,121.21M334.39,121.21A6.42,6.42,0,0,0,334.39,134.05A6.42,6.42,0,0,0,334.39,121.21M355.07,121.21A6.42,6.42,0,0,0,355.07,134.05A6.42,6.42,0,0,0,355.07,121.21M44.93,141.89A6.42,6.42,0,0,0,44.93,154.73A6.42,6.42,0,0,0,44.93,141.89M106.96,141.89A6.42,6.42,0,0,0,106.96,154.73A6.42,6.42,0,0,0,106.96,141.89M334.39,141.89A6.42,6.42,0,0,0,334.39,154.73A6.42,6.42,0,0,0,334.39,141.89M355.07,141.89A6.42,6.42,0,0,0,355.07,154.73A6.42,6.42,0,0,0,355.07,141.89M375.75,141.89A6.42,6.42,0,0,0,375.75,154.73A6.42,6.42,0,0,0,375.75,141.89M355.07,162.57A6.42,6.42,0,0,0,355.07,175.41A6.42,6.42,0,0,0,355.07,162.57M375.75,162.57A6.42,6.42,0,0,0,375.75,175.41A6.42,6.42,0,0,0,375.75,162.57M44.93,183.24A6.42,6.42,0,0,0,44.93,196.08A6.42,6.42,0,0,0,44.93,183.24M65.61,183.24A6.42,6.42,0,0,0,65.61,196.08A6.42,6.42,0,0,0,65.61,183.24M355.07,183.24A6.42,6.42,0,0,0,355.07,196.08A6.42,6.42,0,0,0,355.07,183.24M375.75,183.24A6.42,6.42,0,0,0,375.75,196.08A6.42,6.42,0,0,0,375.75,183.24M24.25,203.92A6.42,6.42,0,0,0,24.25,216.76A6.42,6.42,0,0,0,24.25,203.92M44.93,203.92A6.42,6.42,0,0,0,44.93,216.76A6.42,6.42,0,0,0,44.93,203.92M86.28,203.92A6.42,6.42,0,0,0,86.28,216.76A6.42,6.42,0,0,0,86.28,203.92M313.72,203.92A6.42,6.42,0,0,0,313.72,216.76A6.42,6.42,0,0,0,313.72,203.92M355.07,203.92A6.42,6.42,0,0,0,355.07,216.76A6.42,6.42,0,0,0,355.07,203.92M24.25,224.59A6.42,6.42,0,0,0,24.25,237.43A6.42,6.42,0,0,0,24.25,224.59M65.61,224.59A6.42,6.42,0,0,0,65.61,237.43A6.42,6.42,0,0,0,65.61,224.59M86.28,224.59A6.42,6.42,0,0,0,86.28,237.43A6.42,6.42,0,0,0,86.28,224.59M313.72,224.59A6.42,6.42,0,0,0,313.72,237.43A6.42,6.42,0,0,0,313.72,224.59M334.39,224.59A6.42,6.42,0,0,0,334.39,237.43A6.42,6.42,0,0,0,334.39,224.59M355.07,224.59A6.42,6.42,0,0,0,355.07,237.43A6.42,6.42,0,0,0,355.07,224.59M65.61,245.27A6.42,6.42,0,0,0,65.61,258.11A6.42,6.42,0,0,0,65.61,245.27M334.39,245.27A6.42,6.42,0,0,0,334.39,258.11A6.42,6.42,0,0,0,334.39,245.27M375.75,245.27A6.42,6.42,0,0,0,375.75,258.11A6.42,6.42,0,0,0,375.75,245.27M24.25,265.95A6.42,6.42,0,0,0,24.25,278.79A6.42,6.42,0,0,0,24.25,265.95M375.75,265.95A6.42,6.42,0,0,0,375.75,278.79A6.42,6.42,0,0,0,375.75,265.95M24.25,286.62A6.42,6.42,0,0,0,24.25,299.46A6.42,6.42,0,0,0,24.25,286.62M44.93,286.62A6.42,6.42,0,0,0,44.93,299.46A6.42,6.42,0,0,0,44.93,286.62M24.25,307.3A6.42,6.42,0,0,0,24.25,320.14A6.42,6.42,0,0,0,24.25,307.3M44.93,307.3A6.42,6.42,0,0,0,44.93,320.14A6.42,6.42,0,0,0,44.93,307.3M65.61,307.3A6.42,6.42,0,0,0,65.61,320.14A6.42,6.42,0,0,0,65.61,307.3M334.39,307.3A6.42,6.42,0,0,0,334.39,320.14A6.42,6.42,0,0,0,334.39,307.3M86.28,327.97A6.42,6.42,0,0,0,86.28,340.81A6.42,6.42,0,0,0,86.28,327.97M127.63,327.97A6.42,6.42,0,0,0,127.63,340.81A6.42,6.42,0,0,0,127.63,327.97M251.69,327.97A6.42,6.42,0,0,0,251.69,340.81A6.42,6.42,0,0,0,251.69,327.97M293.04,327.97A6.42,6.42,0,0,0,293.04,340.81A6.42,6.42,0,0,0,293.04,327.97M355.07,327.97A6.42,6.42,0,0,0,355.07,340.81A6.42,6.42,0,0,0,355.07,327.97M65.61,348.65A6.42,6.42,0,0,0,65.61,361.49A6.42,6.42,0,0,0,65.61,348.65M86.28,348.65A6.42,6.42,0,0,0,86.28,361.49A6.42,6.42,0,0,0,86.28,348.65M106.96,348.65A6.42,6.42,0,0,0,106.96,361.49A6.42,6.42,0,0,0,106.96,348.65M127.63,348.65A6.42,6.42,0,0,0,127.63,361.49A6.42,6.42,0,0,0,127.63,348.65M168.99,348.65A6.42,6.42,0,0,0,168.99,361.49A6.42,6.42,0,0,0,168.99,348.65M189.66,348.65A6.42,6.42,0,0,0,189.66,361.49A6.42,6.42,0,0,0,189.66,348.65M293.04,348.65A6.42,6.42,0,0,0,293.04,361.49A6.42,6.42,0,0,0,293.04,348.65M334.39,348.65A6.42,6.42,0,0,0,334.39,361.49A6.42,6.42,0,0,0,334.39,348.65M355.07,348.65A6.42,6.42,0,0,0,355.07,361.49A6.42,6.42,0,0,0,355.07,348.65M106.96,369.33A6.42,6.42,0,0,0,106.96,382.17A6.42,6.42,0,0,0,106.96,369.33M127.63,369.33A6.42,6.42,0,0,0,127.63,382.17A6.42,6.42,0,0,0,127.63,369.33M148.31,369.33A6.42,6.42,0,0,0,148.31,382.17A6.42,6.42,0,0,0,148.31,369.33M251.69,369.33A6.42,6.42,0,0,0,251.69,382.17A6.42,6.42,0,0,0,251.69,369.33");
+      document.getElementById("bitmoji").setAttribute("xlink:href", "");
+      document.getElementById("main").setAttribute("height", "400");
+      document.getElementById("main").setAttribute("width", "400");
+      document.getElementById("main").setAttribute("viewBox", "0 0 400 400");
+      document.getElementById("rect").setAttribute("height", 360);
+      document.getElementById("rect").setAttribute("width", 360);
+      document.getElementsByTagName("image")[0].setAttribute("x", "62")
+      document.getElementsByTagName("image")[0].setAttribute("y", "62")
+      afterSet();
+    }
+  }
+}
+
+function changeBackgroundColor(color){
+  document.getElementById("dots").setAttribute("fill", "#000000");
+  document.getElementById("circle").setAttribute("fill", color);
+  document.getElementById("background").setAttribute("fill", color);
+  //if you want to make all dots black when case is white, put this piece of code in if statement  
+  //&& (document.getElementById("caseImage").getAttribute("src") != "cases/ffffff.png")
+  if((color == "#000000" || color == "#162545" || color == "#B00D23" || color == "#30443d" || color=="#191970")){
+    document.getElementById("dots").setAttribute("fill", "#FFFFFF");
+  }
+}
+
+function onUsernameEntered(){
+  username = document.getElementById("username").value;
+  changeBitmojiAndDots(username);
+}
+
+var caseImage = document.getElementById("caseImage");
+
+function reloadCaseImage(colorNum){
+  console.log(colorNum);
+  document.getElementById("caseImage").setAttribute("src", "cases/" + colorNum + ".png");
+}
+
+let typingTimer;
+let doneTypingInterval = 500;
+let usernameInput = document.getElementById('username');
+
+//on input, start the countdown
+usernameInput.addEventListener('input', () => {
+    clearTimeout(typingTimer);
+    if (usernameInput.value) {
+        typingTimer = setTimeout(onUsernameEntered, doneTypingInterval);
+    }
+});
+
+</script>
+
+</body>
+</html>
