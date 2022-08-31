@@ -8,7 +8,6 @@ CORS(app)
 
 @app.route('/', methods=['GET'])
 def sendData():
-
     # GET request
     if request.method == 'GET':
         username = request.args.get('username', default = 'emmettmiller', type = str)
@@ -48,4 +47,3 @@ def test_page():
 
 if __name__ == "__main__":
     app.run()
-

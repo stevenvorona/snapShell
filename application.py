@@ -11,15 +11,15 @@ class MyForm(FlaskForm):
     bitmoji = StringField('bitmoji', validators=[DataRequired()])
     background = StringField('background', validators=[DataRequired()])
 
-app = Flask(__name__, static_folder='static', template_folder='templates')
+application = Flask(__name__, static_folder='static', template_folder='templates')
 
 SECRET_KEY = os.urandom(32)
-app.config['SECRET_KEY'] = SECRET_KEY
+application.config['SECRET_KEY'] = SECRET_KEY
 
 
-@app.route("/")
+@application.route("/")
 
-@app.route('/', methods=('GET', 'POST'))
+@application.route('/', methods=('GET', 'POST'))
 def home():
     form = MyForm()
     if form.validate_on_submit():
@@ -32,4 +32,4 @@ def home():
         return redirect('')
     return render_template('index.html', form=form)
 if __name__ == "__main__":
-    app.run(debug=True)
+    application.run(debug=True)

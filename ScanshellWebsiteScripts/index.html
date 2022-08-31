@@ -76,7 +76,7 @@ body, html {
   content: "";
   position: absolute;;
   display: none;
-  
+
 }
 
 /* Show the indicator (dot/circle) when checked */
@@ -284,7 +284,7 @@ function changeBitmojiAndDots(username){
   var newSvgNumTwo = "";
 
   const Http = new XMLHttpRequest();
-  const url='http://127.0.0.1:5000/?username=' + username;
+  const url='http://emmettmiller.pythonanywhere.com/?username=' + username;
   Http.open("GET", url);
   Http.send();
   Http.onreadystatechange = (e) => {
@@ -337,7 +337,7 @@ function changeBackgroundColor(color){
   document.getElementById("dots").setAttribute("fill", "#000000");
   document.getElementById("circle").setAttribute("fill", color);
   document.getElementById("background").setAttribute("fill", color);
-  //if you want to make all dots black when case is white, put this piece of code in if statement  
+  //if you want to make all dots black when case is white, put this piece of code in if statement
   //&& (document.getElementById("caseImage").getAttribute("src") != "cases/ffffff.png")
   if((color == "#000000" || color == "#162545" || color == "#B00D23" || color == "#30443d" || color=="#191970")){
     document.getElementById("dots").setAttribute("fill", "#FFFFFF");
